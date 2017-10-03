@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Presupuesto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h2>Cotización de equipo de cómputo</h2>
+        </div>
+        <div>
+            <form>
+                <div>
+                    <input type="text" value="COMPONENTE" style="width:100px;" disabled>
+                    <input type="text" value="PRECIO" style="width:100px;" disabled>
+                </div>
+                <div>
+                    <select id="idprocesador" onchange="muestraPreciosProc()" style="width:100px;">
+                    <option>-Procesador-</option>
+                    <option value="100.000">Intel I3</option>
+                    <option value="200.000">Intel I5</option>
+                    <option value="300.000">Intel I7</option>
+                </select>
+                <input type="text" id="precioProcesador" disabled>
+                </div>
+                <div>
+                    <select id="idmonitor" onchange="muestraPreciosMon()" style="width:100px;">
+                    <option>-Monitor-</option>
+                    <option value="150.000">Samsung 19"</option>
+                    <option value="230.000">Samsung 20"</option>
+                    <option value="310.000">Samsung 21"</option>
+                </select>
+                <input type="text" id="precioMonitor" disabled>
+                </div>
+                <div>
+                    <select id="iddd" onchange="muestraPreciosDD()" style="width:100px;">
+                    <option>-Disco duro-</option>
+                    <option value="100.000">500 Gb</option>
+                    <option value="200.000">1 Tb</option>
+                    <option value="300.000">2 Tb</option>
+                </select>
+                <input type="text" id="precioDD" disabled><br/>
+                </div>
+            </form>
+            <div>
+                <input type="button" value="Calcular" id="botonCalcular" onclick="calcular()">
+                <input type="text" id="valorTotal" disabled>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            function muestraPreciosProc(){
+                var selectProcesador = document.getElementById('idprocesador');
+                document.getElementById('precioProcesador').value=selectProcesador.options[selectProcesador.selectedIndex].value;
+            }
+            
+            function muestraPreciosMon(){              
+                var selectMonitor = document.getElementById('idmonitor');
+                document.getElementById('precioMonitor').value=selectMonitor.options[selectMonitor.selectedIndex].value;
+            }
+            function muestraPreciosDD(){              
+                var selectDD = document.getElementById('iddd');
+                document.getElementById('precioDD').value=selectDD.options[selectDD.selectedIndex].value;
+            }
+            
+            function calcular(){
+                var selectProcesador = document.getElementById('idprocesador');
+                var selectMonitor = document.getElementById('idmonitor');
+                var selectDD = document.getElementById('iddd');
+                                        
+                document.getElementById('valorTotal').value=
+                        parseInt(selectProcesador.options[selectProcesador.selectedIndex].value) + 
+                        parseInt(selectMonitor.options[selectMonitor.selectedIndex].value)+
+                        parseInt(selectDD.options[selectDD.selectedIndex].value);
+            }
+        </script>
+    </body>
+</html>
