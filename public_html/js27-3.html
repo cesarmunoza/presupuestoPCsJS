@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript ya 27 - 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h2>Pizzas il tartaro</h2>
+        </div>
+        <div>
+            <form>
+                <div>
+                    <input type="text" value="SABOR" style="width:120px; text-align: center;" disabled>
+                    <input type="text" value="VALOR" style="width:120px; text-align: center;" disabled>
+                    <input type="text" value="CANTIDAD" style="width:120px; text-align: center;" disabled>
+                </div>
+                <div>
+                    <select id="idPizzaEleccion" onchange="calculaPrecios()" style="width:124px;">
+                        <option>-Elegir-</option>
+                        <option value="25000">Queso</option>
+                        <option value="35000">Jamon y queso</option>
+                        <option value="40000">Pepperonni</option>
+                        <option value="50000">Especial</option>
+                    </select>
+                    <input type="text" id="precioPizza" style="width:120px;" disabled>
+
+                    <select id="idCantidad" onchange="cantidadPizzas()" style="width:124px;">
+                        <option>-Elegir-</option>
+                        <option >1</option>
+                        <option >2</option>
+                        <option >3</option>
+                        <option >4</option>
+                        <option >5</option>
+                        <option >6</option>
+                        <option >7</option>
+                        <option >8</option>
+                        <option >9</option>
+                        <option >10</option>
+                    </select>
+                </div>                
+            </form>
+            <div>
+                <input type="button" value="Calcular" id="botonCalcular" onclick="calcular()">
+                <input type="text" id="valorTotal" disabled>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            function calculaPrecios() {
+                var selectPrecioPizza = document.getElementById('idPizzaEleccion');
+                document.getElementById('precioPizza').value = selectPrecioPizza.options[selectPrecioPizza.selectedIndex].value;
+            }
+            
+            function calcular() {
+                var precioTotal = document.getElementById('idPizzaEleccion');
+                var cantidadPizzas = document.getElementById('idCantidad');
+                
+                document.getElementById('valorTotal').value =
+                        (parseInt(precioTotal.options[precioTotal.selectedIndex].value) * parseInt(cantidadPizzas.options[cantidadPizzas.selectedIndex].value));
+                        
+            }
+        </script>
+    </body>
+</html>

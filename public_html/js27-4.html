@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Examen virtual</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Examen virtual</h2>
+        <div>
+            <p>1. Cuál es la mitad de la mitad de la cuarta parte de 80?</p>
+            <select id="idPregunta1">
+                <option>-Elegir-</option>
+                <option>10</option>
+                <option>5</option>
+                <option>8</option>
+                <option>4</option>
+            </select>
+        </div>
+        <div>
+            <p>1. Cuando yo tenía 6 años, mi herman tenía la mitad de mi edad;
+                ahora que tengo 70, cuántos años tiene ella?</p>
+            <select id="idPregunta2">
+                <option>-Elegir-</option>
+                <option>40</option>
+                <option>35</option>
+                <option>67</option>
+                <option>56</option>
+            </select>
+        </div>
+        <div>
+            <p>1. Qué tiene que ver conmigo la mamá del único vástago de mi padre?</p>
+            <select id="idPregunta3">
+                <option>-Elegir-</option>
+                <option>Mi madre</option>
+                <option>Mi hermana</option>
+                <option>Mi cuñada</option>
+                <option>Mi abuela</option>
+            </select>
+        </div>
+        <div>
+            <p>1. Cuánto es 1030 + 1030 +30 +10?</p>
+            <select id="idPregunta4">
+                <option>-Elegir-</option>
+                <option>3000</option>
+                <option>2100</option>
+                <option>2200</option>
+                <option>3100</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        <div>
+            <input type="button" value="Enviar" onclick="calificar()">
+        </div>
+
+        <div>
+            <input type="text" id="respuestasBuenas" disabled>
+        </div>
+
+        <script type="text/javascript">
+            var contadorRespuestas = 0;
+            function calificar() {
+                var elige1 = document.getElementById('idPregunta1');
+                var respuesta1 =
+                        parseInt(elige1.options[elige1.selectedIndex].text);
+                if (respuesta1 === 5) {
+                    contadorRespuestas++;
+                }
+                
+                var elige2 = document.getElementById('idPregunta2');
+                var respuesta2 =
+                        parseInt(elige2.options[elige2.selectedIndex].text);
+                if (respuesta2 === 67) {
+                    contadorRespuestas++;
+                }
+                
+                var elige3 = document.getElementById('idPregunta3');
+                var respuesta3 = elige3.options[elige3.selectedIndex].text;
+                if (respuesta3 === 'Mi madre') {
+                    contadorRespuestas++;
+                }
+                
+                var elige4 = document.getElementById('idPregunta4');
+                var respuesta4 =
+                        parseInt(elige4.options[elige4.selectedIndex].text);
+                if (respuesta4 === 2100) {
+                    contadorRespuestas++;
+                }
+                document.getElementById('respuestasBuenas').value = contadorRespuestas;
+            }
+
+        </script>
+    </body>
+</html>
