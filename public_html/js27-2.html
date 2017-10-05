@@ -4,41 +4,40 @@
         <title>Presupuesto</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
-    <body>
-        <div>
+    <body>        
+        <div class="container" style="background-color: #5bc0de; ">
             <h2>Cotización de equipo de cómputo</h2>
-        </div>
-        <div>
             <form>
                 <div>
-                    <input type="text" value="COMPONENTE" style="width:100px;" disabled>
-                    <input type="text" value="PRECIO" style="width:100px;" disabled>
+                    <input type="text" value="COMPONENTE" disabled>
+                    <input type="text" value="PRECIO" disabled>
                 </div>
                 <div>
-                    <select id="idprocesador" onchange="muestraPreciosProc()" style="width:100px;">
+                    <select id="idprocesador" onchange="muestraPreciosProc()">
                     <option>-Procesador-</option>
-                    <option value="100.000">Intel I3</option>
-                    <option value="200.000">Intel I5</option>
-                    <option value="300.000">Intel I7</option>
+                    <option value="100000">Intel I3</option>
+                    <option value="200000">Intel I5</option>
+                    <option value="300000">Intel I7</option>
                 </select>
                 <input type="text" id="precioProcesador" disabled>
                 </div>
                 <div>
-                    <select id="idmonitor" onchange="muestraPreciosMon()" style="width:100px;">
+                    <select id="idmonitor" onchange="muestraPreciosMon()">
                     <option>-Monitor-</option>
-                    <option value="150.000">Samsung 19"</option>
-                    <option value="230.000">Samsung 20"</option>
-                    <option value="310.000">Samsung 21"</option>
+                    <option value="150000">Samsung 19"</option>
+                    <option value="230000">Samsung 20"</option>
+                    <option value="310000">Samsung 21"</option>
                 </select>
                 <input type="text" id="precioMonitor" disabled>
                 </div>
                 <div>
-                    <select id="iddd" onchange="muestraPreciosDD()" style="width:100px;">
+                    <select id="iddd" onchange="muestraPreciosDD()">
                     <option>-Disco duro-</option>
-                    <option value="100.000">500 Gb</option>
-                    <option value="200.000">1 Tb</option>
-                    <option value="300.000">2 Tb</option>
+                    <option value="100000">500 Gb</option>
+                    <option value="200000">1 Tb</option>
+                    <option value="300000">2 Tb</option>
                 </select>
                 <input type="text" id="precioDD" disabled><br/>
                 </div>
