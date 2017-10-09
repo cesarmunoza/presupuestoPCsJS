@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript ya 31</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">        
+    </head>
+    <body>
+        <h2>Login</h2>
+        <div class="container">
+            <label for="usuario">Usuario</label>
+            <input type="text"
+                   id="usuario"
+                   name="usuario"
+                   value="Nombre"
+                   onfocus="limpiar(this)"
+                   onblur="verificarDatos(this)">
+            <br>
+            <label for="clavr">Clave</label>
+            <input type="password"
+                   id="clave"
+                   name="clave"
+                   onfocus="limpiar(this)"
+                   onblur="verificarDatos(this)">
+        </div>
+        
+        <script type="text/javascript">
+            function limpiar(control){
+                control.value='';
+            }
+            function verificarDatos(control){
+                if(control.value==''){
+                    alert('Debe ingresar los datos solicitados');
+                }
+            }
+        </script>
+    </body>
+</html>

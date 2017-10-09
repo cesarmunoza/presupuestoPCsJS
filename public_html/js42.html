@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascriptya42</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function Persona(nombre, edad){
+                this.nombre = nombre;
+                this.edad = edad;
+                this.mostrarMayor = mostrarPersona;
+            }
+            function mostrarPersona(){
+                var identidad = 'Nombre: '+this.nombre+', edad: '+this.edad;
+                return identidad;
+            }
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var vectorGente = new Array(4);
+            var mayor = 0;
+            vectorGente[0]=new Persona('Jorge', '36');
+            vectorGente[1]=new Persona('Cesar', '35');
+            vectorGente[2]=new Persona('Pedro', '34');
+            vectorGente[3]=new Persona('Pablo', '33');
+            for(var i=0; i<vectorGente.length;i++){
+                document.write(vectorGente[i].mostrarPersona());
+                document.write('<br>');
+            }
+        </script>
+    </body>
+</html>
